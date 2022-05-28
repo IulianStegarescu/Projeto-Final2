@@ -1,5 +1,9 @@
-export default function Home2() {
+import { Fragment } from "react"
+import MainNavigation from "../componentes/mainPage"
+export default function Regras() {
     return (
+        <Fragment>
+             <MainNavigation/>
         <div >
             <h1>Regras</h1>
             <p>
@@ -10,5 +14,6 @@ export default function Home2() {
        For full effect, the Card Czar should usually re-read the Black Card before presenting each answer.
        </p>
         </div>
+        </Fragment>
     )
 }

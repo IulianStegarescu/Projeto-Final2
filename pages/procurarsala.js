@@ -1,5 +1,9 @@
-export default function Home2() {
+import { Fragment } from "react"
+import MainNavigation from "../componentes/mainPage"
+export default function ProcuraSala() {
     return (
+        <Fragment>
+             <MainNavigation/>
         <div >
             <div>
                 <h1 >Sala do João </h1>
@@ -22,5 +26,6 @@ export default function Home2() {
 
             </div>
         </div>
+        </Fragment>
     )
 }

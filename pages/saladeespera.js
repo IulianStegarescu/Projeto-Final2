@@ -1,19 +1,19 @@
 import Link from "next/link";
 import { Fragment } from "react";
-
-export default function SalaDeEspera() {
+import MainNavigation from "../componentes/mainPage"
+export default function SalaDeEspera({ nomeSala, setState, baralho, nomeInput }) {
     return (
         <Fragment>
+             <MainNavigation/>
             <div >
-                <h1>Sala Do Marcelo</h1>
-                <h3 >2/7 Jogadores</h3>
+                <h1>Nome da sala: {nomeSala}</h1>
+                <h3 >1/7 Jogadores</h3>
                 <div>
                     <p>
-                        Armando<br />
-                    Zé
-                </p>
+                        {nomeInput}
+                    </p>
                 </div>
-                <h3>Baralho: Music</h3>
+                <h3>Baralho: {baralho}</h3>
                 <Link href="/jogo">
                     <button>Jogar</button>
                 </Link>
