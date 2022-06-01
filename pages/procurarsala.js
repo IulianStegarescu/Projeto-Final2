@@ -20,17 +20,18 @@ export default function ProcurarSala() {
 
         <Fragment>
             <MainNavigation />
-            {    todasAsSalas.length !== 0 ?
+            {todasAsSalas.length !== 0 ?
                 <div>
                     {todasAsSalas.map((e) =>
-                        <div>
+                        <div className="tempoSala">
                             <h1 >{e.NomeDaSala}</h1>
                             <h3>Jogadores: 1/{e.NumeroDeJogadores}</h3>
                             <h3>Baralho: {e.Baralho}</h3>
-                            <button onClick={() => entrarNaSala(e._id)}>Entrar</button>
+                            <button className="mt-1 ml-2" onClick={() => entrarNaSala(e._id)}>Entrar</button>
                         </div>
                     )}</div>
+
                 : <p className="NaoHaSalas">Nao ha salas disponiveis</p>}
-        </Fragment>
+        </Fragment >
     )
 }

@@ -132,7 +132,7 @@ export default function Criarsala({ sala, setSala }) {
                 <div className="tempoSala mb-4">
                     <h1 className="criarSala mb-3">Criar Sala</h1>
                     <h1>Nome da sala: {sala.NomeDaSala}</h1>
-                    <h3 className="mt-1">Escolhe o número máximo de<br /> rondas</h3>
+                    <h3 className="mt-1">Escolhe o número<br /> máximo de rondas</h3>
                     <select className="dropdown" value={sala.NumeroDeRondas} onChange={(e) =>
                         setSala(s => ({ ...s, NumeroDeRondas: e.target.value }))}>
                         <option value="10">10 Rondas</option>
