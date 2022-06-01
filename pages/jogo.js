@@ -13,13 +13,13 @@ export default function Jogo() {
         setDadosParaSalaDeEspera(json)
     }
 
-    async function handlePlay() {
-        //if sou um jogador
-        fetch("/jogo/:id/jogar", {
-            //neste pedido e preciso enviar, o id do jogo e a carta que escolhemos
-        })
+    // async function handlePlay() {
+    //     //if sou um jogador
+    //     fetch("/jogo/:id/jogar", {
+    //         //neste pedido e preciso enviar, o id do jogo e a carta que escolhemos
+    //     })
 
-    }
+    // }
 
 
 
@@ -27,29 +27,29 @@ export default function Jogo() {
         <Fragment>
             {/* <MainNavigation/> */}
             {
-                player ?
-                     <div className='container'>
-                <Sidebar />
-                <div className='areaDeJogo'>
-                    <div className="perguntas"><h3>Perguntas</h3></div>
-                    <div className='areaResposta'></div>
-                    <div className="cartas">
-                        <div className='carta' onClick={() => handlePlay()}>Respostas</div>
-                        <div className='carta'>Respostas</div>
-                        <div className='carta'>Respostas</div>
-                        <div className='carta'>Respostas</div>
-                        <div className='carta'>Respostas</div>
+                //player ?
+                <div className='container'>
+                    <Sidebar />
+                    <div className='areaDeJogo'>
+                        <div className="perguntas"><h3>Perguntas</h3></div>
+                        <div className='areaResposta'></div>
+                        <div className="cartas">
+                            <div className='carta' onClick={() => handlePlay()}>Respostas</div>
+                            <div className='carta'>Respostas</div>
+                            <div className='carta'>Respostas</div>
+                            <div className='carta'>Respostas</div>
+                            <div className='carta'>Respostas</div>
+                        </div>
+                        <div className='areaAcoes'>
+                            {/* <button>Troca as 5 cartas aleatoriamente</button> */}
+                            <button>Jogar</button>
+                        </div>
                     </div>
-                    <div className='areaAcoes'>
-                        {/* <button>Troca as 5 cartas aleatoriamente</button> */}
-                        <button>Jogar</button>
-                    </div>
-                </div>
-            </div>:
-            <div>
+                </div> //:
+                //<div>
                 //visao de huri
-            </div>
-           }
+                //</div> 
+            }
 
 
         </Fragment>
