@@ -1,10 +1,9 @@
 import { Fragment } from "react";
-import MainNavigation from "../componentes/logo"
 import Sidebar from "../componentes/sidebar"
 export default function Jogo() {
 
     //esta funcao tem que ser chamada a cada segundo
-    async function fetchData() {
+    async function fetchData1() {
         const resultado = await fetch(`/api/jogo/${id}`)
         //este endpoiint carrega tudo sobre o jogo
         const json = await resultado.json()
@@ -12,6 +11,15 @@ export default function Jogo() {
         //guarda no state
         setDadosParaSalaDeEspera(json)
     }
+    useEffect(() => {
+        const id = setInterval(() => {
+             fetchData1()
+         }, 1000);
+ 
+         return () => {
+             clearInterval(id)
+         }
+     })
 
     async function handlePlay() {
         //if sou um jogador
@@ -41,13 +49,12 @@ export default function Jogo() {
                         <div className='carta'>Respostas</div>
                     </div>
                     <div className='areaAcoes'>
-                        {/* <button>Troca as 5 cartas aleatoriamente</button> */}
                         <button>Jogar</button>
                     </div>
                 </div>
             </div>:
             <div>
-                //visao de huri
+                //visao de juri
             </div>
            }
 
@@ -55,6 +62,11 @@ export default function Jogo() {
         </Fragment>
     )
 }
+
+
+
+
+
 {/* <div className="divjogo">
                 <div className="cartas">
                     <h1>Quem é o melhor Formador?</h1>

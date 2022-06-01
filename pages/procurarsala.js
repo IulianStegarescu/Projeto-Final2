@@ -1,31 +1,36 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import MainNavigation from "../componentes/logo"
-export default function Home2() {
+import { useRouter } from 'next/router'
+export default function ProcurarSala() {
+    const [todasAsSalas, setTodasAsSalas] = useState([])
+    const router = useRouter()
+    async function MostrarTodasAsSalas() {
+        const resultado = await fetch(`/api/ObterTodasAsSalas`)
+        const json = await resultado.json()
+        setTodasAsSalas(json)
+    }
+    useEffect(() => {
+        MostrarTodasAsSalas()
+    }, [])
+
+    async function entrarNaSala(_id) {
+        router.push(`/saladeespera/${_id}`)
+    }
     return (
-       <Fragment>
-           <MainNavigation/>
-       <div >
-            <div>
-                <h1 >Sala do João </h1>
-                <h3>Jogadores: 2/7</h3>
-                <h3>Baralho: Emojis</h3>
-                <button>Entrar</button>
-            </div>
 
-            <div>
-                <h1 >Sala do Luis</h1>
-                <h3>Jogadores: 3/7</h3>
-                <h3>Baralho: Classic</h3>
-                <button>Entrar</button>
-            </div>
-            <div>
-                <h1 >Sala do David </h1>
-                <h3>Jogadores: 7/7</h3>
-                <h3>Baralho: Classic</h3>
-                <button disabled={true}>Sala Cheia</button>
-
-            </div>
-        </div>
+        <Fragment>
+            <MainNavigation />
+            {    todasAsSalas.length !== 0 ?
+                <div>
+                    {todasAsSalas.map((e) =>
+                        <div>
+                            <h1 >{e.NomeDaSala}</h1>
+                            <h3>Jogadores: 1/{e.NumeroDeJogadores}</h3>
+                            <h3>Baralho: {e.Baralho}</h3>
+                            <button onClick={() => entrarNaSala(e._id)}>Entrar</button>
+                        </div>
+                    )}</div>
+                : <p className="NaoHaSalas">Nao ha salas disponiveis</p>}
         </Fragment>
     )
 }
