@@ -21,13 +21,13 @@ export default function Jogo() {
          }
      })
 
-    async function handlePlay() {
-        //if sou um jogador
-        fetch("/jogo/:id/jogar", {
-            //neste pedido e preciso enviar, o id do jogo e a carta que escolhemos
-        })
+    // async function handlePlay() {
+    //     //if sou um jogador
+    //     fetch("/jogo/:id/jogar", {
+    //         //neste pedido e preciso enviar, o id do jogo e a carta que escolhemos
+    //     })
 
-    }
+    // }
 
 
 
