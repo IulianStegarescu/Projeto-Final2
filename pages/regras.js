@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import MainNavigation from "../componentes/mainPage"
+import MainNavigation from "../componentes/logo"
 export default function Regras() {
     return (
         <Fragment>

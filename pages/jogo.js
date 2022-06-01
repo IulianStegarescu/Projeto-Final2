@@ -1,11 +1,61 @@
-import Link from "next/link";
 import { Fragment } from "react";
-import MainNavigation from "../componentes/mainPage"
+import MainNavigation from "../componentes/logo"
+import Sidebar from "../componentes/sidebar"
 export default function Jogo() {
+
+    //esta funcao tem que ser chamada a cada segundo
+    async function fetchData() {
+        const resultado = await fetch(`/api/jogo/${id}`)
+        //este endpoiint carrega tudo sobre o jogo
+        const json = await resultado.json()
+
+        //guarda no state
+        setDadosParaSalaDeEspera(json)
+    }
+
+    async function handlePlay() {
+        //if sou um jogador
+        fetch("/jogo/:id/jogar", {
+            //neste pedido e preciso enviar, o id do jogo e a carta que escolhemos
+        })
+
+    }
+
+
+
     return (
         <Fragment>
-             <MainNavigation/>
-            <div >
+            {/* <MainNavigation/> */}
+            {
+                player ?
+                     <div className='container'>
+                <Sidebar />
+                <div className='areaDeJogo'>
+                    <div className="perguntas"><h3>Perguntas</h3></div>
+                    <div className='areaResposta'></div>
+                    <div className="cartas">
+                        <div className='carta' onClick={() => handlePlay()}>Respostas</div>
+                        <div className='carta'>Respostas</div>
+                        <div className='carta'>Respostas</div>
+                        <div className='carta'>Respostas</div>
+                        <div className='carta'>Respostas</div>
+                    </div>
+                    <div className='areaAcoes'>
+                        {/* <button>Troca as 5 cartas aleatoriamente</button> */}
+                        <button>Jogar</button>
+                    </div>
+                </div>
+            </div>:
+            <div>
+                //visao de huri
+            </div>
+           }
+
+
+        </Fragment>
+    )
+}
+{/* <div className="divjogo">
                 <div className="cartas">
                     <h1>Quem é o melhor Formador?</h1>
                 </div>
@@ -20,15 +70,9 @@ export default function Jogo() {
                 </div>
                 <div className="pontuacao">
                     <h1  className="jogadores">Pontuacao</h1>
-                    <h3  className="jogadores">Marcelo: -1 </h3>
+                    <h3  className="jogadores">Marcelo: -1 (juri) </h3>
                     <h3  className="jogadores">Carolina: 999</h3>
                     <h3  className="ronda">Ronda 4/10 </h3>
-                    {/* <h3  className="ronda">Hiperligação:
-                    http://
-localhost:3000</h3> */}
                     <div className="linhapontuacao"></div>
                 </div>
-            </div>
-        </Fragment>
-    )
-}
+            </div> */}

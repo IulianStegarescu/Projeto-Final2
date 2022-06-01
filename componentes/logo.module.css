@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    justify-content: center;
+    font-size: 40px;
+    background-color: black;
+    background-image: url(../public/logo.svg);
+    color: white;
+    opacity: 70%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}

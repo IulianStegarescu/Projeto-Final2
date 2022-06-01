@@ -1,15 +1,14 @@
 import { Fragment } from "react";
-import MainNavigation from "../componentes/mainPage"
+import MainNavigation from "../componentes/logo"
 export default function Baralhos() {
     return (
         <Fragment>
-        <MainNavigation/>
-        <div >
-            <h1 >Deks</h1>
-            <h3>Music</h3>
-            <h3>Night Life</h3>
-            <h3>Names</h3>
-        </div>
+            <MainNavigation />
+            <div className="baralhos"><h1>Decks</h1></div>
+            <div className="todosOsBaralhos">
+                <div className="verbaralhos"><h3>Classic</h3></div>
+                <div className="verbaralhos"><h3>Emojis</h3></div>
+            </div>
         </Fragment>
     )
 }
