@@ -13,13 +13,13 @@ export default function Jogo() {
         setDadosParaSalaDeEspera(json)
     }
 
-    async function handlePlay() {
-        //if sou um jogador
-        fetch("/jogo/:id/jogar", {
-            //neste pedido e preciso enviar, o id do jogo e a carta que escolhemos
-        })
+    // async function handlePlay() {
+    //     //if sou um jogador
+    //     fetch("/jogo/:id/jogar", {
+    //         //neste pedido e preciso enviar, o id do jogo e a carta que escolhemos
+    //     })
 
-    }
+    // }
 
 
 
@@ -27,7 +27,7 @@ export default function Jogo() {
         <Fragment>
             {/* <MainNavigation/> */}
             {
-                player ?
+                //player ?
                      <div className='container'>
                 <Sidebar />
                 <div className='areaDeJogo'>
@@ -45,10 +45,11 @@ export default function Jogo() {
                         <button>Jogar</button>
                     </div>
                 </div>
-            </div>:
-            <div>
-                //visao de huri
             </div>
+            // :
+            // <div>
+            //     //visao de huri
+            // </div>
            }
 
 

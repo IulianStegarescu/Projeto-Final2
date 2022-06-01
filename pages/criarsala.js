@@ -31,7 +31,11 @@ export default function Criarsala({ sala, setSala }) {
                         <input value={sala.NomeDaSala} type="text" onChange={(evento) =>
                             setSala(s => ({ ...s, NomeDaSala: evento.target.value }))} />
                         <button onClick={() => { setView((prev) => prev + 1) }} disabled={sala.NomeDaSala == ""}>Seguinte</button>
+                            <div className="barra">
+                            <div className="barra2"></div>    
+                            </div>
                     </div>
+                    
                     : null}
                 {view === 1
                     ? <div>
