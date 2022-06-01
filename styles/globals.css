@@ -2,13 +2,17 @@ html,
 body {
   height: 100%;
   width: 100%;
-  color:white;
+  color: white;
   background-image: url(../public/imagem3.webp);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0;
   margin: 0;
-  font-family:'open sans';
+  font-family: 'open sans', sans-serif;
+}
+
+p, a, div, h3 {
+  font-family: 'open sans', sans-serif;
 }
 
 /* .fullpage{
@@ -29,16 +33,18 @@ a {
 
 .logo,
 .nomeDoJogador,
-.input{
+.input {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-input{
+
+input {
   height: 6vh;
-  
+
 }
-button{
+
+button {
   color: black;
   font-size: 20px;
   text-align: center;
@@ -49,46 +55,50 @@ button{
   border-radius: 30px;
   margin-right: 18%;
 }
-.organizarButoes{
+
+.organizarButoes {
   flex-direction: row;
   justify-content: center;
   justify-items: center;
   display: flex;
-  }
-
-
-.dropdown{
-  height: 6vh;
-  background-color: #000;
-  font-size: 30px;
-  color: #b3b3b3;
 }
 
 
-.verbaralhos{
+.dropdown {
+  height: 6vh;
+  background-color: #b3b3b3b5;
+  font-size: 30px;
+  color: #000;
+  border-radius: 	5px;
+}
+
+
+.verbaralhos {
   height: 250px;
-  width:150px;
+  width: 150px;
   background-color: #d8d5e6;
-  color:#000;
+  color: #000;
   margin: 20px;
   align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-family: 'open sans';
-  font-size:30px;
+  font-size: 30px;
   width: 250px;
   height: 400px;
   border-radius: 20px;
 }
-.todosOsBaralhos{
+
+.todosOsBaralhos {
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-family: 'open sans';
   margin-top: 50px;
 }
-.baralhos{
+
+.baralhos {
   font-size: 50px;
   display: flex;
   flex-direction: row;
@@ -96,13 +106,19 @@ button{
   font-family: 'open sans';
   margin-top: 20px;
 }
-.criarSala{
+
+.criarSala {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-input{
+.criarSalaContainer {
+  display: block;
+  margin-bottom: 6%;
+}
+
+input {
   background-color: #b3b3b3b5;
   color: #000;
   height: 50px;
@@ -110,16 +126,18 @@ input{
   font-size: 30px;
   border-radius: 10px;
 }
-select{
+
+select {
   width: 300px;
   height: 600px;
   font-size: 40px;
 }
 
 @font-face {
-  font-family: "Anybody" ;
+  font-family: "Anybody";
   src: url('https://fonts.googleapis.com/css2?family=Anybody:wght@600&family=Carter+One&display=swap');
 }
+
 * {
   padding: 0;
   margin: 0;
@@ -148,7 +166,8 @@ select{
 }
 
 .logo p {
-  font-family: 'open sans';;
+  font-family: 'open sans';
+  ;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -182,15 +201,27 @@ select{
   }
 }
 
+.tempoSala {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tempoSalaButton {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
 button {
   color: black;
   font-size: 20px;
   text-align: center;
- font-family: 'open sans';
+  font-family: 'open sans', sans-serif;
   background-color: #b3b3b3;
   height: 60px;
   width: 100px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-right: 30px;
 }
 
@@ -238,7 +269,7 @@ button {
 }
 
 .cartas {
-  margin-top:10px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-evenly;
   position: fixed;
@@ -281,7 +312,7 @@ button {
 .logged {
   display: flex;
   align-items: flex-end;
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
 }
 
 /*   
@@ -313,7 +344,7 @@ button {
 }
 
 .player-status {
-  margin-left:10px;
+  margin-left: 10px;
   margin-bottom: 10px;
 }
 
@@ -336,46 +367,78 @@ button {
 .flex p {
   font-size: 16px;
 }
-.paginit{
-  display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
+
+.mt-1 {
+  margin-top: 1rem;
 }
-.NaoHaSalas{
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.paginit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.NaoHaSalas {
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-size: 100px;
 }
-.barra{
+
+.barra {
   height: 30px;
   bottom: 0;
   background-color: red;
   width: 100vw;
   position: absolute;
 }
-.barra2{
+
+.barra2 {
   height: 30px;
   bottom: 0;
-  background-color:green;
+  background-color: green;
   width: 20vw;
   position: absolute;
 }
 
-.barra{
+.barra3 {
   height: 30px;
   bottom: 0;
-  background-color: red;
-  width: 100vw;
+  background-color: green;
+  width:40vw;
   position: absolute;
 }
-.barra2{
+
+.barra4 {
   height: 30px;
   bottom: 0;
-  background-color:green;
-  width: 20vw;
+  background-color: green;
+  width: 60vw;
+  position: absolute;
+}
+
+.barra5 {
+  height: 30px;
+  bottom: 0;
+  background-color: green;
+  width: 80vw;
+  position: absolute;
+}
+
+.barra6 {
+  height: 30px;
+  bottom: 0;
+  background-color: green;
+  width: 100vw;
   position: absolute;
 }
 
@@ -385,25 +448,24 @@ button {
   justify-items: center;
   display: flex;
   margin-top: 2rem
-
 }
 
 .nomeSala {
-    justify-content: space-evenly;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    margin-top: 16rem;
-    font-family: 'open sans';
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  font-family: 'open sans';
 }
 
 .tituloCriarSala {
   font-family: 'open sans';
   width: 200px;
   height: 100px;
-  margin: -70px 0 0 -120px;
+  margin: -5rem 0 0 -120px;
   position: absolute;
   left: 50%;
   padding: 20px;
@@ -425,34 +487,28 @@ button {
 
 .escolheBaralho {
   justify-content: space-evenly;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    margin-top: 16rem;
-    font-family: 'open sans';
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-family: 'open sans';
 }
 
 .tituloNomeSala {
   justify-content: center;
   display: flex;
-
+  margin-top: 3rem;
 }
 
 .tituloCriarSala2 {
-
-
+  margin-top: 23px;
 }
 
-.barra3 {
-  height: 30px;
-  bottom: 0;
-  background-color:green;
-  width: 40vw;
-  position: absolute;
-}
-.Regras{
+
+
+.Regras {
   display: flex;
   flex-direction: column;
   align-content: stretch;
@@ -462,15 +518,15 @@ button {
 }
 
 
-.regrasH1{
+.regrasH1 {
   display: flex;
   font-family: 'open sans';
   color: #fff;
-  font-size:40px;
+  font-size: 40px;
 
 }
 
-.regrasP{
+.regrasP {
   display: flex;
   /* background-color: #b3b3b3; */
   padding: 10px;
@@ -481,8 +537,8 @@ button {
   justify-content: center;
   flex-direction: column;
   font-family: 'open sans';
-  color: #fff;;
-  font-size:35px;
-  
-}
+  color: #fff;
+  ;
+  font-size: 35px;
 
+}

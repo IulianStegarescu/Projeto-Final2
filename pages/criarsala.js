@@ -19,11 +19,12 @@ export default function Criarsala({ sala, setSala }) {
         router.push(`/saladeespera/${json._id}`)
 
     }
+
     return (
 
         <Fragment>
             <MainNavigation />
-            <div >
+            <div className="criarSalaContainer">
                 {view === 0 ?
                     <div>
                         <div className="tituloCriarSala">
@@ -84,26 +85,31 @@ export default function Criarsala({ sala, setSala }) {
                 </div>
             </div>
             {view === 2 ?
-                <div>
-                    <h1 className="criarSala">Criar Sala</h1>
+                <div className="tempoSala">
+                    <h1 className="criarSala mb-3">Criar Sala</h1>
                     <h1>Nome da sala: {sala.NomeDaSala}</h1>
-                    <h3>Escolhe o tempo de cada ronda</h3>
+                    <h3 className="mt-1">Escolhe o tempo de cada ronda</h3>
                     <select className="dropdown" value={sala.TempoPorRonda} onChange={(e) =>
                         setSala(s => ({ ...s, TempoPorRonda: e.target.value }))}>
                         <option value={15}>15 segundos</option>
                         <option value="25 segundos">25 segundos</option>
                         <option value="35 segundos">35 segundos</option>
                     </select>
-                    <button onClick={() => { setView((prev) => prev - 1) }}>Anterior</button>
-                    <button onClick={() => { setView((prev) => prev + 1) }}>Seguinte</button>
+                    <div className="tempoSalaButton">
+                        <button onClick={() => { setView((prev) => prev - 1) }}>Anterior</button>
+                        <button onClick={() => { setView((prev) => prev + 1) }}>Seguinte</button>
+                    </div>
+                    <div className="barra">
+                        <div className="barra4"></div>
+                    </div>
                 </div>
                 : null}
 
             {view === 3 ?
-                <div>
-                    <h1 className="criarSala">Criar Sala</h1>
+                <div className="tempoSala">
+                    <h1 className="criarSala mb-3">Criar Sala</h1>
                     <h1>Nome da sala: {sala.NomeDaSala}</h1>
-                    <h3>Escolhe o número de jogadores</h3>
+                    <h3 className="mt-1">Escolhe o número de jogadores</h3>
                     <select className="dropdown" value={sala.NumeroDeJogadores} onChange={(e) =>
                         setSala(s => ({ ...s, NumeroDeJogadores: e.target.value }))}>
                         <option value="2">2 jogadores</option>
@@ -113,24 +119,33 @@ export default function Criarsala({ sala, setSala }) {
                         <option value="6">6 jogadores</option>
                         <option value="7">7 jogadores</option>
                     </select>
-                    <button onClick={() => { setView((prev) => prev - 1) }}>Anterior</button>
-                    <button onClick={() => { setView((prev) => prev + 1) }}>Seguinte</button>
+                    <div className="tempoSalaButton">
+                        <button onClick={() => { setView((prev) => prev - 1) }}>Anterior</button>
+                        <button onClick={() => { setView((prev) => prev + 1) }}>Seguinte</button>
+                    </div>
+                    <div className="barra">
+                        <div className="barra5"></div>
+                    </div>
                 </div>
                 : null}
             {view === 4 ?
-                <div>
-                    <h1 className="criarSala">Criar Sala</h1>
+                <div className="tempoSala mb-4">
+                    <h1 className="criarSala mb-3">Criar Sala</h1>
                     <h1>Nome da sala: {sala.NomeDaSala}</h1>
-                    <h3>Escolhe o número máximo de rondas</h3>
+                    <h3 className="mt-1">Escolhe o número máximo de<br /> rondas</h3>
                     <select className="dropdown" value={sala.NumeroDeRondas} onChange={(e) =>
                         setSala(s => ({ ...s, NumeroDeRondas: e.target.value }))}>
                         <option value="10">10 Rondas</option>
                         <option value="15">15 Rondas</option>
                         <option value="20">20 Rondas</option>
                     </select>
-
-                    <button onClick={() => { setView((prev) => prev - 1) }}>Anterior</button>
-                    <button onClick={() => criarSala()}>Criar Sala</button>
+                    <div className="tempoSalaButton">
+                        <button onClick={() => { setView((prev) => prev - 1) }}>Anterior</button>
+                        <button onClick={() => criarSala()}>Criar Sala</button>
+                    </div>
+                    <div className="barra">
+                        <div className="barra6"></div>
+                    </div>
                 </div>
                 : null}
 
